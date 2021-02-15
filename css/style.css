@@ -1,0 +1,12 @@
+h1 {
+    background-color: red;
+    float: left;
+    padding: 10px;
+}
+img {
+    float: left;
+    width: 20%;
+}
+div {
+    clear: both;
+}
