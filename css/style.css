@@ -1,12 +1,103 @@
-h1 {
-    background-color: red;
-    float: left;
-    padding: 10px;
+header{
+    height: 100px;
+    background-color: lightslategray;
+    margin-bottom: 20px;
 }
-img {
+header div{
+    height: 100px;
+    padding: 0px;
+    position: relative;
+    text-align: center;
+}
+header div h1{
+    display: inline;
+    font-size: 30px;
+    padding-bottom: 35px;
+    padding-top: 35px;
+    position: absolute;
+    left: 30px;
+    color: #f1f1f1;
+}
+header div a{
+    display: inline;
+    font-size: 30px;
+    padding-bottom: 35px;
+    padding-top: 35px;
+    position: absolute;
+    right: 30px;
+    text-decoration: none;
+    color: #f1f1f1;
+}
+header div img{
+    display: inline;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 70px;
+    width: 150px;
+}
+#sales{
+    margin-top: 30px;
+}
+table,th,tr,td{
+    border: solid;
+}
+#family{
+    height: 350px;
+    width: 50%;
     float: left;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+body main section{
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+body main section h3{
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+#scroll{
+    overflow: auto;
+    height: 350px;
+    border: solid;
+}
+#products{
+    height: 350px;
+    width: 70%;
+    border: solid;
+    float: left;
+    margin-right: 20px;
+}
+.pro{
+    height: 300px;
     width: 20%;
+    float: left;
+    margin-left: 20px;
+    margin-right: 0px;
+    padding-top: 25px;
 }
-div {
+ul li{
+    margin-bottom: 70px;
+    text-align: center;
+}
+ul li a{
+    background-color: lightslategray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left:10px ;
+    text-decoration: none;
+    color: #f1f1f1;
+}
+footer{
     clear: both;
+    height: 50px;
+    width: 100%;
+    background-color: lightslategray;
+    text-align: center;
+    font-size: 30px;
+    color: #f1f1f1;
 }
+
+
+

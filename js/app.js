@@ -10,7 +10,7 @@ Lima	       2	       16	              4.6
 */
 
 let numberOfHour = 14;
-
+let allBranches = [];
 //making branch object model ///////////////////////////////////////////////
 function Branch(name,minCust,maxCust,avgCookie){
     this.name = name;
@@ -20,6 +20,7 @@ function Branch(name,minCust,maxCust,avgCookie){
     this.noOfCustPerHour = [];
     this.noOfCookiesPerHour = [];
     this.totalNoOfCookies = 0;
+    allBranches.push(this);
 }
 Branch.prototype.addCust = function(){
     for (let i = 0; i < numberOfHour ; i++){
@@ -67,7 +68,6 @@ paris.cookiesConsumed();
 let lima = new Branch('Lima',2,16,4.6);
 lima.addCust();
 lima.cookiesConsumed();
-let allBranches = [seattle,tokyo,dubai,paris,lima];
 //////////////////////////////////////////////////////////
 
 //making the table heading ///////////////////////////////
