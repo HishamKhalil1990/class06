@@ -8,10 +8,10 @@ Dubai	       11	       38              	  3.7
 Paris	       20	       38	              2.3
 Lima	       2	       16	              4.6 
 */
-
 let numberOfHour = 14;
 let allBranches = [];
-//making branch object model ///////////////////////////////////////////////
+
+//making branch object model
 function Branch(name,minCust,maxCust,avgCookie){
     this.name = name;
     this.minCust = minCust;
@@ -50,53 +50,66 @@ Branch.prototype.render = function(){
         }
     }
 }
-///////////////////////////////////////////////////////////////////////////
 
 //making and filling instances of the branch object 
 let seattle = new Branch('Seattle',23,65,6.3);
-seattle.addCust();
-seattle.cookiesConsumed();
 let tokyo = new Branch('Tokyo',3,24,1.2);
-tokyo.addCust();
-tokyo.cookiesConsumed();
 let dubai = new Branch('Dubai',11,38,3.7);
-dubai.addCust();
-dubai.cookiesConsumed();
 let paris = new Branch('Paris',20,38,2.3);
-paris.addCust();
-paris.cookiesConsumed();
 let lima = new Branch('Lima',2,16,4.6);
-lima.addCust();
-lima.cookiesConsumed();
-//////////////////////////////////////////////////////////
+for (let i = 0; i< allBranches.length; i++){
+    allBranches[i].addCust();
+    allBranches[i].cookiesConsumed();
+}
 
-//making the table heading ///////////////////////////////
+//making the table container 
 let parents = document.getElementById('sales');
 let table = document.createElement('table');
 parents.appendChild(table);
 table.setAttribute('style','border-style: solid;');
 table.setAttribute('style','text-align: center;');
+
+//making first row
 rowConstruct(1);
-/////////////////////////////////////////////////////////
 
 //making the table body
-seattle.render();
-tokyo.render();
-dubai.render();
-paris.render();
-lima.render();
-//////////////////////
+bodyConstructor()
 
 //making the table footer
 rowConstruct(2);
-////////////////////////
 
-//function used ////////////////////////////////////////////////////////////
+//branchs updating and adding
+let submitting = document.getElementById('submitingEvent');
+submitting.addEventListener('submit',addSubmit);
+function addSubmit(event){
+    event.preventDefault();
+    let name = event.target.branchName.value;
+    let min = event.target.minCustmer.value;
+    let max = event.target.maxCustmer.value;
+    let avg = event.target.avgCookies.value;
+    let newBranch = new Branch(name,min,max,avg);
+    newBranch.addCust();
+    newBranch.cookiesConsumed();
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
+    rowConstruct(1);
+    bodyConstructor()
+    rowConstruct(2);
+}
+
+//function used 
 //random custmer nmber 
 function randomCustmer(min,max) {
     return Math.floor( Math.random()*(max-min+1)+min);
 }
-//first and last row in the table constructor function
+//body constructor 
+function bodyConstructor(){
+    for (let i = 0; i< allBranches.length; i++){
+        allBranches[i].render();
+    }
+}
+//first and last row in the table constructor function 
 function rowConstruct(number){
     let tableRow = document.createElement('tr');
     table.appendChild(tableRow);
@@ -143,5 +156,7 @@ function rowConstruct(number){
         }
     } 
 }
-///////////////////////////////////////////////////////////////////////////
+
+
+
 
