@@ -98,6 +98,24 @@ footer{
     font-size: 30px;
     color: #f1f1f1;
 }
-
-
-
+ form{
+     text-align: center;
+ }
+ form fieldset{
+     border: solid;
+     margin-top: 20px;
+ }
+fieldset:last-child{
+    padding-bottom: 20px;
+}
+fieldset:first-child{
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+input:valid {
+    border: 2px solid black;
+  }
+  input:invalid:required {
+    background-color: red;
+  }
