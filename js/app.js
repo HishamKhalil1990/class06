@@ -24,7 +24,8 @@ function Branch(name,minCust,maxCust,avgCookie){
 }
 Branch.prototype.addCust = function(){
     for (let i = 0; i < numberOfHour ; i++){
-        this.noOfCustPerHour.push(Math.floor(randomCustmer(this.minCust,this.maxCust)));
+        let randomNumber = randomCustmer(this.minCust,this.maxCust);
+        this.noOfCustPerHour.push(randomNumber);
     }
 }
 Branch.prototype.cookiesConsumed = function(){
@@ -83,10 +84,11 @@ let submitting = document.getElementById('submitingEvent');
 submitting.addEventListener('submit',addSubmit);
 function addSubmit(event){
     event.preventDefault();
+    console.log(event);
     let name = event.target.branchName.value;
-    let min = event.target.minCustmer.value;
-    let max = event.target.maxCustmer.value;
-    let avg = event.target.avgCookies.value;
+    let min = parseInt(event.target.minCustmer.value);
+    let max = parseInt(event.target.maxCustmer.value);
+    let avg = parseInt(event.target.avgCookies.value);
     let newBranch = new Branch(name,min,max,avg);
     newBranch.addCust();
     newBranch.cookiesConsumed();
@@ -101,7 +103,7 @@ function addSubmit(event){
 //function used 
 //random custmer nmber 
 function randomCustmer(min,max) {
-    return Math.floor( Math.random()*(max-min+1)+min);
+    return Math.floor(Math.random()*(max-min+1)+min);
 }
 //body constructor 
 function bodyConstructor(){
